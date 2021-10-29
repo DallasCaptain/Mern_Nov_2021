@@ -6,7 +6,7 @@ import Header from './Components/Header'
 function App() {
 
   let myname = 'Bob'
-
+  let all =()=>{alert('Ouch')}
   return (
     <div className="App">
       <header className="App-header">
@@ -19,7 +19,7 @@ function App() {
         <Header yournamehere={myname} >
         </Header>
 
-        <button onClick={()=>{alert('Ouch')}} >This little button</button>
+        <button onClick={all} >This little button</button>
       </header>
     </div>
   );
