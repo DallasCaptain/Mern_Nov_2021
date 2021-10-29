@@ -26,23 +26,18 @@ const Form = (props)=>{
                 <h3>Thanks for your submission</h3> :
                 
             <form onSubmit ={ createUser }>
-                
                 <div>
                     Username:
                 <input type='text' onChange={(e) => setUsername(e.target.value)} value={username}></input>
-
                 </div>
                 <div>
                     Email:
                 <input type='text' onChange={(e) => setEmail(e.target.value)} value={email}></input>
-
                 </div>
                 <div>
                     Password:
                 <input type='text' onChange={(e) => setPassword(e.target.value)} value={password}></input>
-
                 </div>
-
                 <input type='submit' value='Create User'></input>
             </form>
         }
