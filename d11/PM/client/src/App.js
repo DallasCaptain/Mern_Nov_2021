@@ -3,9 +3,16 @@ import './App.css';
 import Main from './Main'
 import PersonForm from './Components/PersonForm';
 import {Paper} from '@material-ui/core'
+import axios from 'axios';
+import {useState} from 'react'
 
 function App() {
-  const editperson = {_id: '618aa6f68468d49f4be4cccc',fname:'Bob',lname:'Boberson'}
+  const [editperson,setEditperson] = useState({_id: '618bf757d616f4ccb3010df8',fname:'carlo',lname:'carlerson'})
+  const foau = ()=>{
+    axios.put('http://localhost:8000/api/test',{_id: '618bf757d616f4ccb3010df8', fname:'c',email:'bob@bob.com'})
+    .then(res=>setEditperson(res))
+    .catch(err=>console.log(err))
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +24,8 @@ function App() {
       <Main></Main>
       <PersonForm></PersonForm>
       <PersonForm obj={editperson}></PersonForm>
+
+      <button onClick={foau}>Update Bob</button>
     </div>
   );
 }

@@ -25,3 +25,11 @@ module.exports.update=(req,res)=>{
     .catch(err=>{res.json(err)})
 }
 
+module.exports.foau=(req,res)=>{
+    console.log(req.body)
+    Person.findOneAndUpdate({fname:'carlo'},req.body,{runValidators:true})
+    .then(updatedPerson=>{
+        res.json(updatedPerson)
+    })
+    .catch(err=>{res.json(err)})
+}

@@ -16,7 +16,6 @@ export default (props)=>{
     const handleFname =( e )=>{
         setFname(e.target.value)
         if(e.target.value.length >= 2){
-            
             setFnameError('')
         }else{
             setFnameError('First Name is too short')
